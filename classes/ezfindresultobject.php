@@ -10,7 +10,7 @@ class eZFindResultObject extends eZContentObject
     /*!
      \reimp
     */
-    function eZFindResultObject( $rows = array() )
+    function __construct( $rows = array() )
     {
         $this->LocalAttributeValueList = array();
         $this->LocalAttributeNameList = array( 'published' );
@@ -19,6 +19,15 @@ class eZFindResultObject extends eZContentObject
         {
             $this->setAttribute( $name, $value );
         }
+    }
+
+    /**
+     * BC
+     * @param array $rows
+     */
+    function eZFindResultObject( $rows = array() )
+    {
+        self::__construct( $rows );
     }
 
     /*!

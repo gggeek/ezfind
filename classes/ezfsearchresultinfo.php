@@ -24,9 +24,18 @@ class ezfSearchResultInfo
      *           'Engine' => 'engine name',
      *           ... )
      */
-    function ezfSearchResultInfo( array $resultArray )
+    function __construct( array $resultArray )
     {
         $this->ResultArray = $resultArray;
+    }
+
+    /**
+     * BC
+     * @param array $resultArray
+     */
+    function ezfSearchResultInfo( array $resultArray )
+    {
+        self::__construct( $resultArray );
     }
 
     /**

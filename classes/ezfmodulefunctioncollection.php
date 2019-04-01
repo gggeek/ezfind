@@ -12,10 +12,18 @@
 class ezfModuleFunctionCollection
 {
     /**
-     * Constructor
+     * Added for BC to avoid warnings in case anyone calls ezfModuleFunctionCollection
+     */
+    function __construct()
+    {
+    }
+
+    /**
+     * BC
      */
     function ezfModuleFunctionCollection()
     {
+        self::__construct();
     }
 
     /**

@@ -10,7 +10,7 @@ class eZFindResultNode extends eZContentObjectTreeNode
     /*!
      \reimp
     */
-    function eZFindResultNode( $rows = array() )
+    function __construct( $rows = array() )
     {
         parent::__construct( $rows );
         if ( isset( $rows['id'] ) )
@@ -27,6 +27,15 @@ class eZFindResultNode extends eZContentObjectTreeNode
                                                'score_percent',
                                                'elevated'
                 );
+    }
+
+    /**
+     * BC
+     * @param array $rows
+     */
+    function eZFindResultNode( $rows = array() )
+    {
+        self::__construct( $rows );
     }
 
     /*!

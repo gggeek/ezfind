@@ -1,4 +1,4 @@
-#!/usr/bin/env php
+ezfUpdateSearchIndexSolr#!/usr/bin/env php
 <?php
 /**
  * @copyright Copyright (C) eZ Systems AS. All rights reserved.
@@ -61,12 +61,23 @@ class ezfUpdateSearchIndexSolr
      * @param eZCLI $cli
      * @param string $executedScript
      */
-    function ezfUpdateSearchIndexSolr( eZScript $script, eZCLI $cli, $executedScript )
+    function __construct( eZScript $script, eZCLI $cli, $executedScript )
     {
         $this->Script = $script;
         $this->CLI = $cli;
         $this->Options = null;
         $this->executedScript = $executedScript;
+    }
+
+    /**
+     * BC
+     * @param eZScript $script
+     * @param eZCLI $cli
+     * @param $executedScript
+     */
+    function ezfUpdateSearchIndexSolr( eZScript $script, eZCLI $cli, $executedScript )
+    {
+        self::__construct( $script, $cli, $executedScript );
     }
 
     /**
