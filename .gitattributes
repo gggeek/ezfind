@@ -1,0 +1,6 @@
+/ant export-ignore
+/tests export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+build.xml export-ignore
+dist.sh export-ignore
