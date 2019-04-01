@@ -29,3 +29,5 @@ The github issue tracker is used to manage any such requests.
 * Fixed EZP-26907: avoid 'mysql has gone away' errors
 
 * Fixed EZP-29608: better output of updatesearchindexsolr
+
+* Fixed: 'Avoid error.log entries eZUser::attribute:Attribute 'id' does not exists', thanks @fwoldt
